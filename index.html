@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="control.js"></script> 
+    <script src="https://kit.fontawesome.com/ce71329ed5.js" crossorigin="anonymous"></script>
+    <title>Live code editor</title>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-custom navbar-mainbg">
+        <a class="navbar-brand navbar-logo" href="#">Made By Avni Bhardwaj   <i class="fa-brands fa-google"></i></i></a>
+        <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.linkedin.com/in/avni-bhardwaj-gdsc-lead/" target="_blank"><i class="fa-brands fa-linkedin"></i>Linkedin</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="https://www.instagram.com/avniartist/" target="_blank"><i class="fa-brands fa-instagram" style="color: #e63b7a;"></i>Instagram</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="mailto:avnibhardwaj01.ab@gmail.com"><i class="fa-solid fa-envelope" style="color: #caf0fe;"></i>Email</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="left">
+            <label><i class="fa-brands fa-html5 fa-fade" style="color: #53d5fd;"></i> HTML</label>
+            <textarea id="html-code-placeholder" onkeyup="run()"></textarea>
+
+            <label><i class="fa-brands fa-css3-alt" style="color: #ff8647;"></i> CSS</label>
+            <textarea id="css-code-placeholder" onkeyup="run()"></textarea>
+
+            <label><i class="fa-brands fa-js" style="color: #5e30eb;"></i> JAVASCRIPT</label>
+            <textarea id="js-code-placeholder" onkeyup="run()"></textarea>
+        </div>
+        <div class="right">
+            <label><i class="fa-solid fa-play" style="color: #f1c9fe;"></i> Output</label>
+            <iframe id="output"></iframe>
+        </div>
+    </div>
+    <script>
+        function run(){
+            let htmlcode=document.getElementById("html-code-placeholder").value;
+            let csscode=document.getElementById("css-code-placeholder").value;
+            let jscode=document.getElementById("js-code-placeholder").value;
+            let outputcode=document.getElementById("output");
+
+            output.contentDocument.body.innerHTML =htmlcode+"<style>"+csscode+"</style>";
+            output.contentWindow.eval(jscode);
+        }
+    </script>
+</body>
+</html>
